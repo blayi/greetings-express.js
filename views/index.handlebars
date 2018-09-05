@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!--<link rel="stylesheet" href="css/greet.css">-->
+  <link rel="stylesheet" href="css/simple-grid.css">
+
+</head>
+
+<body>
+  <div class="container">
+  <header>
+    <h1>GREETINGS</h1>
+  </header>
+
+<form action="/action"  method="POST">
+    <div class="row">
+      <div class="col-6">
+      name :<input class="InputText" type="text" placeholder="Enter name here">
+       <span class="greetCount" >{{greetCount}}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+      <div class="namegreeted" id="Hi">
+        {{greetName}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+        <input type="radio" name="languageType" class="languageTypeRadio" value="English">
+        <span>English</span>
+      </div>
+
+      <div class="col-1">
+        <input type="radio" name="languageType" class="languageTypeRadio" value="Xhosa">
+        <span>IsiXhosa</span>
+      </div>
+
+      <div class="col-1">
+        <input type="radio" name="languageType" class="languageTypeRadio" value="Afrikaans">
+        <span>Afrikaans</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <button class="button-primary Greetbtn" type="submit" name="button" value="{{greet}}">Greet Me</button>
+      </div>
+      <div class="col-3">
+        <button class="button-primary Clearbtn">Clear Name</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+</body>
+
+<!-- <script src="js/greet-logic.js" charset="utf-8"></script>
+<script src="js/greet.js" charset="utf-8"></script> -->
+
+</html>
