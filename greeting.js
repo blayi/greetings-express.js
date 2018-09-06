@@ -1,28 +1,30 @@
-module.exports  = function GreetmeFunction(storedNames) {
+module.exports = function GreetmeFunction() {
 
-  var names = storedNames || {};
+  var names = {};
 
   var getName = function(value) {
-    if (names[value] === undefined) {
-      names[value] = 0;
-    }
-
-
     if (value !== undefined && value !== "") {
+
+      if (names[value] === undefined) {
+        names[value] = 0;
+      }
+
       return value;
     }
+
+
   }
 
   var greet = function(enteredName, selectedLang) {
     // send enteredName to be validated by the getName function
     var name = getName(enteredName);
 
-    if (name != undefined) {
-      if (selectedLang == 'Xhosa') {
+    if (name) {
+      if (selectedLang === 'Xhosa') {
         return "Molo, " + name;
-      } else if (selectedLang == 'English') {
+      } else if (selectedLang === 'English') {
         return "Good day, " + name;
-      } else if (selectedLang == 'Afrikaans') {
+      } else if (selectedLang === 'Afrikaans') {
         return "Goeie dag, " + name;
       }
     }

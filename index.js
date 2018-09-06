@@ -23,27 +23,38 @@ app.get('/', function (req, res) {
 })
 
 app.post('/greet', function (req, res) {
-let enteredName = req.body.enteredName;
-let selectedLang = req.body.selectedLang;
+let enteredName = req.body.personName;
+let selectedLang = req.body.languageType;
 let greetPerson = greetFun.greet(enteredName, selectedLang);
 let greetCount = greetFun.counter();
-
-  res.render('greeting');
-  greetPerson,
-  greetCount
-})
-
-app.get('/greet/:enteredName/:selectedLang', function(req, res) {
-  let enteredName = req.params.enteredName;
-  let selectedLang = req.params.selectedLang;
-  let greetPerson = greetPeople.greet(selectedLang, enteredName);
-  let greetCount = greetFun.counter();
-
-  res.render('greeting', {
+console.log(req.body);
+  res.render('index',{
     greetPerson,
     greetCount
   });
 });
+
+// app.get('/greet/:enteredName/:selectedLang', function(req, res) {
+//   let enteredName = req.params.enteredName;
+//   let selectedLang = req.params.selectedLang;
+//   let greetPerson = greetPeople.greet(selectedLang, enteredName);
+//   let greetCount = greetFun.counter();
+//
+//   res.render('greeting', {
+//     greetPerson,
+//     greetCount
+//   });
+// });
+
+// app.post('/greets', function (req, res) {
+//   let greetName = req.body.greeted_names;
+//   res.render('greets');
+// });
+//
+// app.post('/', function(req, res){
+//   greetPerson.reset();
+//
+// });
 
 
 let PORT = process.env.PORT || 3008;
