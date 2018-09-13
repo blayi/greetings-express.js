@@ -6,12 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blayi/greetings-express.js.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blayi/greetings-express.js/issues"
+  },
+  "homepage": "https://github.com/blayi/greetings-express.js#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "pg": "^7.4.3"
   }
 }

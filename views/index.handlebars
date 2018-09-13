@@ -1,16 +1,15 @@
-  <header>
-    <h1>GREETINGS</h1>
-  </header>
+<header>
+  <h1>GREETINGS</h1>
+</header>
 
-<form action="/greet"  method="POST">
+<body>
+  <form action="/greet" method="POST">
     <div class="row">
       <div class="col-6">
-      name :<input class="InputText" name='personName' type="text" placeholder="Enter name here">
-       <span class="greetCount" >0{{counter}}</span>
+        name :<input class="InputText" name='personName' type="text" placeholder="Enter name here">
       </div>
     </div>
     <br>
-
     <div class="row">
       <div class="col-1">
         <input type="radio" name="languageType" class="languageTypeRadio" value="English">
@@ -28,18 +27,27 @@
       </div>
     </div>
     <br>
-
     <div class="row">
       <div class="col-2">
         <button class="button-primary Greetbtn" type="submit" value="{{greet}}">Greet Me</button>
       </div>
-      <div class="col-3">
+    </div>
+    <div class="row">
+      <div class="col-4">
         <button class="button-primary Clearbtn">Clear Name</button>
       </div>
     </div>
-    </form>
-    <div class="row">
-      <div class="col-6">
-      <div class="namegreeted" value="">{{greetPerson}}</div>
+  </form>
+  <div class="row">
+    <div class="col-12">
+      <div class="namegreeted" value="">
+        <h2>{{greetPerson}}</h2></div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="greetCount">{{counter}}</div>
+    </div>
+  </div>
+</body>

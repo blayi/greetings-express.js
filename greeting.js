@@ -1,49 +1,64 @@
-module.exports = function GreetmeFunction() {
+module.exports = function GreetmeFunction(pool) {
 
   var names = {};
 
-  var getName = function(value) {
-    if (value !== undefined && value !== "") {
+  //   var getName =  async function(value) {
+  //     if (value !== undefined && value !== "") {
 
-      if (names[value] === undefined) {
-        names[value] = 0;
+  //       if (names[value] === undefined) {
+  //         names[value] = 0;
+  //       }
+  //     }
+  // return value
+  //   }
+
+
+  var greet = async function (enteredName, selectedLang) {
+
+      // send enteredName to be validated by the getName function
+      // var name = getName(enteredName);
+     
+       
+        let userData = await pool.query('select * from users where name =$1', [enteredName])
+       
+        if (userData.rows.length === 0) {
+          await pool.query('insert into users (name, counter) values ($1, $2)', [enteredName, 1])
+        } else {
+          let increment = userData.rows[0].counter + 1;
+          await pool.query('update users set counter=$1 where name =$2', [increment, enteredName])
+        }
+        if (enteredName !== undefined || enteredName !== "") {
+        if (selectedLang === 'Xhosa') {
+          return "Molo, " + enteredName;
+        } else if (selectedLang === 'English') {
+          return "Good day, " + enteredName;
+        } else if (selectedLang === 'Afrikaans') {
+          return "Goeie dag, " + enteredName;
+        }
+       
       }
-
-      return value;
-    }
-
 
   }
 
-  var greet = function(enteredName, selectedLang) {
-    // send enteredName to be validated by the getName function
-    var name = getName(enteredName);
 
-    if (name) {
-      if (selectedLang === 'Xhosa') {
-        return "Molo, " + name;
-      } else if (selectedLang === 'English') {
-        return "Good day, " + name;
-      } else if (selectedLang === 'Afrikaans') {
-        return "Goeie dag, " + name;
-      }
-    }
-  }
 
-  var getNames = function() {
+  var getNames = function () {
     return names;
   }
 
-  var counter = function() {
-    return Object.keys(names).length;
+  var counter = async function () {
+    let result = await pool.query('select count(*) from users ');
+    return result.rows[0].count;
   }
-  var clear = function() {
+
+  var clear = function () {
     names = {};
+
   }
 
   return {
     greet,
     getNames,
-    counter,
+    counter
   }
 }
