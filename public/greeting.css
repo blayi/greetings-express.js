@@ -1,0 +1,84 @@
+* {
+    text-align: center;
+  }
+  
+  .button-primary {
+    box-shadow: none;
+    outline: none;
+    font-style: italic;
+    border: 2px solid blueviolet;
+    font-size: 19px;
+    color: black;
+    height: 30px;
+    width: 150px;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-align: center;
+  }
+ 
+  .greetCount {
+    size: 30px;
+    color: blue;
+  }
+  
+  .InputText {
+    box-shadow: none;
+    outline: none;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .container{
+    background-color:lightslategray;
+}
+  
+  .namegreeted {
+    font-size: 1.8em;
+    color:blueviolet;
+  }
+  
+  
+  
+  h1 {
+    font-family: sans-serif;
+    color: white;
+    background-color: blueviolet;
+    font-size: 38px;
+    text-align: center;
+  }
+
+  p {
+    font-family:Times;
+    color: plum;
+    font-size: 20px;
+  }
+  
+  .button:hover {
+    background-color: blueviolet;
+    color: grey;
+  }
+  
+  .greeted {
+    box-shadow: none;
+    outline: none;
+    font-style: italic;
+    border: 2px solid blueviolet;
+    font-size: 15px;
+    color: black;
+    height: 40px;
+    width: 200px;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .greeted:hover {
+    background-color: blueviolet;
+    color: white;
+  }
