@@ -3,24 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blayi/greetings-express.js.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Siyasanga Blayi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/blayi/greetings-express.js/issues"
   },
-  "homepage": "https://github.com/blayi/greetings-express.js#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "pg": "^7.4.3"
-  }
+  "homepage": "https://github.com/blayi/greetings-express.js#readme"
 }

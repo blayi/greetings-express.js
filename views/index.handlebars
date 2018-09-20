@@ -3,40 +3,37 @@
 </header>
 
 <body>
+   <div class="container">
   <form action="/greet" method="POST">
     <div class="row">
       <div class="col-6">
-        name :<input class="InputText" name='personName' type="text" placeholder="Enter name here">
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-1">
-        <input type="radio" name="languageType" class="languageTypeRadio" value="English">
-        <span>English</span>
-      </div>
-
-      <div class="col-1">
-        <input type="radio" name="languageType" class="languageTypeRadio" value="Xhosa">
-        <span>IsiXhosa</span>
-      </div>
-
-      <div class="col-1">
-        <input type="radio" name="languageType" class="languageTypeRadio" value="Afrikaans">
-        <span>Afrikaans</span>
+        <p>name :</p><input class="InputText" name='personName' type="text" placeholder="Enter name here">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-2">
-        <button class="button-primary Greetbtn" type="submit" value="{{greet}}">Greet Me</button>
+        <input type="radio" name="languageType" class="languageTypeRadio" value="English">
+        <span><p>English</p></span>
+      </div>
+
+      <div class="col-2">
+        <input type="radio" name="languageType" class="languageTypeRadio" value="Xhosa">
+        <span><p>IsiXhosa</p></span>
+      </div>
+
+      <div class="col-2">
+        <input type="radio" name="languageType" class="languageTypeRadio" value="Afrikaans">
+        <span><p>Afrikaans</p></span>
       </div>
     </div>
+    <br>
     <div class="row">
-      <div class="col-4">
-        <button class="button-primary Clearbtn">Clear Name</button>
+      <div class="col-2">
+        <button class="button-primary" type="submit" value="{{greet}}">Greet Me</button>
       </div>
     </div>
+    
   </form>
   <div class="row">
     <div class="col-12">
@@ -44,10 +41,23 @@
         <h2>{{greetPerson}}</h2></div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+{{#if messages.info}}
+<div >
+    <h3 class="entry"> {{messages.info}}</h3>
+</div>
+{{/if}}
+ </div>
+  </div>
+  <div class="col-4">
+        <a href="/greeted"><button class="button-primary">show users</button></a>
+      </div>
 
   <div class="row">
     <div class="col-12">
       <div class="greetCount">{{counter}}</div>
     </div>
+  </div>
   </div>
 </body>

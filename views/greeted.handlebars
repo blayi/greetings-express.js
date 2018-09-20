@@ -1,0 +1,22 @@
+<h2>USERS GREETED</h2>
+<table>
+    <tr>
+        <th>names</th>
+        <th>counter</th>
+    </tr>
+    {{#each users}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{counter}}</td>
+    </tr>
+    {{/each}}
+</table>
+<div class="row">
+      <div class="col-4">
+        <a href="reset">
+        <button class="button-primary" value="{{reset}}">Clear Name</button></a>
+      </div>
+    </div>
+    <form action="index" method="POST">
+         <button class="button-primary">home</button></a>
+    </form>

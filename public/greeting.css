@@ -3,30 +3,22 @@
   }
   
   .button-primary {
-    box-shadow: none;
-    outline: none;
-    font-style: italic;
     border: 2px solid blueviolet;
     font-size: 19px;
     color: black;
     height: 30px;
     width: 150px;
     border-radius: 6px;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.4s;
     cursor: pointer;
     text-align: center;
   }
- 
+
   .greetCount {
     size: 30px;
-    color: blue;
+    color: black;
   }
   
   .InputText {
-    box-shadow: none;
-    outline: none;
     width: 300px;
     height: 35px;
     text-align: center;
@@ -37,24 +29,17 @@
 }
   
   .namegreeted {
-    font-size: 1.8em;
-    color:blueviolet;
-  }
-  
-  
+    font-size: 0.25em;
+    color:pink;
+    text-transform: capitalize;
+  } 
   
   h1 {
     font-family: sans-serif;
-    color: white;
+    color: black;
     background-color: blueviolet;
     font-size: 38px;
     text-align: center;
-  }
-
-  p {
-    font-family:Times;
-    color: plum;
-    font-size: 20px;
   }
   
   .button:hover {
@@ -63,22 +48,23 @@
   }
   
   .greeted {
-    box-shadow: none;
-    outline: none;
-    font-style: italic;
     border: 2px solid blueviolet;
     font-size: 15px;
     color: black;
     height: 40px;
     width: 200px;
     border-radius: 6px;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.4s;
     cursor: pointer;
     text-align: center;
   }
-  .greeted:hover {
-    background-color: blueviolet;
-    color: white;
+
+  .entry {
+    size: 70px;
+    color: crimson;
+  }
+  .languageTypeRadio{
+    border: 2px solid blueviolet;
+    height: 15px;
+    width: 50px;
+    border-radius: 6px;
   }
