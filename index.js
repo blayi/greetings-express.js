@@ -63,15 +63,21 @@ app.post('/greet', async function (req, res) {
   try{
     let enteredName = req.body.personName;
     let selectedLang = req.body.languageType;
-
-    if (enteredName == ""){
-      req.flash('info', 'enter name');
-    }
-    else if (selectedLang == undefined){
+    console.log(selectedLang);
+    let greetPerson;
+    let counter;
+    if (selectedLang === undefined){
       req.flash('info', 'select language');
     }
-    let greetPerson = await greetFun.greet(enteredName, selectedLang);
-    let counter =await greetFun.counter();
+    if (enteredName === ""){
+      req.flash('info', 'enter name');
+    }
+    else{
+      greetPerson = await greetFun.greet(enteredName, selectedLang);
+      counter =await greetFun.counter();
+    }
+   
+    
 
       res.render('index',{
         greetPerson,
