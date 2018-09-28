@@ -45,14 +45,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+
 app.get('/',async function (req, res ) {
-  
+  let counter =await greetFun.counter();
   res.render('index');
 })
+
 app.post('/index',async function (req, res ) {
   // let users= await greetFun.returnNames();
   // let counter =await greetFun.counter();
-  res.render('index')})
+  res.render('index')
+})
   
 app.get('/reset',async function (req, res ) {
   let reset = await greetFun.clear();
@@ -76,9 +79,6 @@ app.post('/greet', async function (req, res) {
       greetPerson = await greetFun.greet(enteredName, selectedLang);
       counter =await greetFun.counter();
     }
-   
-    
-
       res.render('index',{
         greetPerson,
         counter
@@ -100,6 +100,17 @@ app.get("/greeted",async function(req, res){
     })
   
 })
+
+app.get("/counter/:personName",async function(req, res){
+  let name =req.param.personName;
+let Retur = await greetFun.getNames(name);
+  let counter =await greetFun.counter();
+  
+     res.render('greetings',{
+      counter,
+       Retur
+     })
+    })
 
 
 let PORT = process.env.PORT || 3008;

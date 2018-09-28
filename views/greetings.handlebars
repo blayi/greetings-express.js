@@ -5,18 +5,9 @@
         <button class="button-primary" value="{{reset}}">Clear Name</button></a>
       </div>
     </div>
-<table>
-    <tr>
-        <th>names</th>
-        <th>counter</th>
-    </tr>
-    {{#each users}}
-    <tr>
-        <td><a href="/counter/{{name}}">{{name}}</a></td>
-        <td>{{counter}}</td>
-    </tr>
-    {{/each}}
-</table>
+   
+        <p> Hello , {{name}} has been greeted{{counter}}time(s)</p>
+
 
     <form action="index" method="POST">
          <button class="button-primary">home</button></a>

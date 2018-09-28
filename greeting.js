@@ -40,8 +40,9 @@ module.exports = function GreetmeFunction(pool) {
       }
   }
 
-  var getNames = function () {
-    return names;
+  var getNames = async function (names) {
+    let userData = await pool.query('select * from users where name =$1', [names])
+    return userData;
   }
 
   var counter = async function () {
