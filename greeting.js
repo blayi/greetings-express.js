@@ -18,15 +18,15 @@ module.exports = function GreetmeFunction(pool) {
       // send enteredName to be validated by the getName function
       // var name = getName(enteredName);
      
-        let userData = await pool.query('select * from users where name =$1', [enteredName])
+        let userData = await pool.query('select * from users where name =$1', [enteredName.toUpperCase()])
       
         if (userData.rows.length === 0) {
           if(enteredName !=="" && selectedLang !== undefined){
-            await pool.query('insert into users (name, counter) values ($1, $2)', [enteredName, 1])
+            await pool.query('insert into users (name, counter) values ($1, $2)', [enteredName.toUpperCase(), 1])
           }
         } else {
           let increment = userData.rows[0].counter + 1;
-          await pool.query('update users set counter=$1 where name =$2', [increment, enteredName])
+          await pool.query('update users set counter=$1 where name =$2', [increment, enteredName.toUpperCase()])
         }
         if (enteredName !== undefined || enteredName !== "") {
         if (selectedLang === 'Xhosa') {
@@ -42,7 +42,7 @@ module.exports = function GreetmeFunction(pool) {
 
   var getNames = async function (names) {
     let userData = await pool.query('select * from users where name =$1', [names])
-    return userData;
+    return userData.rows;
   }
 
   var counter = async function () {

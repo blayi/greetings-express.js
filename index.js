@@ -64,7 +64,7 @@ app.get('/reset',async function (req, res ) {
 
 app.post('/greet', async function (req, res) {
   try{
-    let enteredName = req.body.personName;
+    let personName = req.body.personName;
     let selectedLang = req.body.languageType;
     console.log(selectedLang);
     let greetPerson;
@@ -72,11 +72,11 @@ app.post('/greet', async function (req, res) {
     if (selectedLang === undefined){
       req.flash('info', 'select language');
     }
-    if (enteredName === ""){
+    if (personName === ""){
       req.flash('info', 'enter name');
     }
     else{
-      greetPerson = await greetFun.greet(enteredName, selectedLang);
+      greetPerson = await greetFun.greet(personName, selectedLang);
       counter =await greetFun.counter();
     }
       res.render('index',{
@@ -103,15 +103,23 @@ app.get("/greeted",async function(req, res){
 
 
 
-app.get("/counter/:personName",async function(req, res){
-  let name =req.param.personName;
-let Retur = await greetFun.getNames(name);
-  let counter =await greetFun.counter();
-  
-     res.render('greetings',{
-      counter,
-       Retur
-     })
+app.get("/counter/:personName",async function(req, res ,next){
+  try {
+    let name =req.params.personName;
+    let Retur = await greetFun.returnNames(name);
+      let counter = Retur[0].counter;
+      console.log(Retur)
+         res.render('greetings',{
+          counter,
+          name
+         })
+
+
+  } catch (error) {
+    
+    next(error)
+  }
+
     })
 
 
