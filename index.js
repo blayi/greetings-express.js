@@ -101,6 +101,8 @@ app.get("/greeted",async function(req, res){
   
 })
 
+
+
 app.get("/counter/:personName",async function(req, res){
   let name =req.param.personName;
 let Retur = await greetFun.getNames(name);
