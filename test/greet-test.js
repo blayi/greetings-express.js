@@ -35,8 +35,8 @@ describe('The Greeting Function', function() {
     assert.equal(greeter, 'Goeie dag, Siya');
   });
   it('should return Greeting undefined if name is not defined', async function() {
-    let greeter = await greetFunc.greet("", 'English');
-    assert.equal(greeter, 'Good day, ');
+    let greeter = await greetFunc.greet("");
+    assert.equal(greeter, undefined);
   });
   it('should be able to count different names of people greeted in the same language',async function(){
 
