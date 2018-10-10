@@ -1,26 +1,9 @@
 module.exports = function GreetmeFunction(pool) {
 
-  var names = {};
-
-  //   var getName =  async function(value) {
-  //     if (value !== undefined && value !== "") {
-
-  //       if (names[value] === undefined) {
-  //         names[value] = 0;
-  //       }
-  //     }
-  // return value
-  //   }
-
-
   var greet = async function (enteredName, selectedLang) {
 
-      // send enteredName to be validated by the getName function
-      // var name = getName(enteredName);
-  
         let userData = await pool.query('select * from users where name=$1', [enteredName])
         
-      
         if (userData.rows.length === 0) {
           if(enteredName !=="" && selectedLang !== undefined){
             await pool.query('insert into users (name, counter) values ($1, $2)', [enteredName, 1])

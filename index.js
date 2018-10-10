@@ -66,7 +66,6 @@ app.post('/greet', async function (req, res) {
   try{
     let personName = req.body.personName;
     let selectedLang = req.body.languageType;
-    console.log(selectedLang);
     let greetPerson;
     let counter;
     if (selectedLang === undefined){
