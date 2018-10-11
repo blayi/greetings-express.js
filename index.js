@@ -128,5 +128,4 @@ app.listen(PORT, function(error){
   if (error){
     console.log(error)
   }
-  console.log('App starting on port', PORT);
 });
